@@ -1,4 +1,4 @@
-package com.korea.test;
+package com.korea.test.note;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,5 +31,15 @@ public class NotebookService {
         notebook.setCreateDate(LocalDateTime.now());
 
         return notebookRepository.save(notebook);
+    }
+
+    public void deleteById(Long notebookId) {
+        notebookRepository.deleteById(notebookId);
+    }
+
+    public void updateName(Long notebookId, String notebookName) {
+        Notebook notebook = getNotebookById(notebookId);
+        notebook.setName(notebookName);
+        notebookRepository.save(notebook);
     }
 }

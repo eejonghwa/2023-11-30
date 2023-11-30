@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form th:action="@{/member/login}" method="post">
+        <div>
+            <label for="username">ID</label>
+            <input type="text" name="username" placeholder="ID">
+        </div>
+        <div>
+            <label for="password"></label>
+            <input type="password" name="password" placeholder="PASSWORD">
+        </div>
+        <div>
+            <input type="submit" value="로그인">
+        </div>
+    </form>
+</div>
+<a href="/member/signup">회원가입</a>
+</body>
+</html>

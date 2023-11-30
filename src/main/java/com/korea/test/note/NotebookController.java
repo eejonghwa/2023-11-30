@@ -1,4 +1,4 @@
-package com.korea.test;
+package com.korea.test.note;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -57,6 +57,18 @@ public class NotebookController {
     public String write() {
         Notebook notebook = notebookService.saveDefaultNotebook();
         notePageService.saveDefaultNotePage(notebook);
+        return "redirect:/";
+    }
+
+    @PostMapping("/delete")
+    public String delete(Long notebookId){
+        notebookService.deleteById(notebookId);
+        return "redirect:/";
+    }
+
+    @PostMapping("/update")
+    public String update(Long notebookId, String notebookName){
+        notebookService.updateName(notebookId,notebookName);
         return "redirect:/";
     }
 }
